@@ -1,11 +1,18 @@
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(exec-path
+   (quote
+    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin"))))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (defconst demo-packages
@@ -17,7 +24,7 @@
     helm-gtags
     helm-projectile
     helm-swoop
-    ;; function-args
+    function-args
     clean-aindent-mode
     comment-dwim-2
     dtrt-indent
@@ -28,7 +35,14 @@
     projectile
     volatile-highlights
     undo-tree
-    zygospore))
+    zygospore
+    workgroups2
+    expand-region
+    ibuffer-vc
+    dired+
+    recentf-ext
+    ztree
+    vlf))
 
 (defun install-packages ()
   "Install all required packages."
@@ -41,40 +55,75 @@
 
 (install-packages)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PACKAGE: workgroups2               ;;
+;;                                    ;;
+;; GROUP: Convenience -> Workgroups   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'workgroups2)
+;; Change some settings
+(workgroups-mode 1)
+
+
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-cg")
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
+(require 'custom-built-in-functions)
+(require 'setup-faces-and-ui)
+(require 'setup-convenience)
+(require 'setup-files)
+(require 'setup-text)
+(require 'setup-data)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
 
+
+(helm-autoresize-mode t)
+
+
 (windmove-default-keybindings)
 
 ;; function-args
-;; (require 'function-args)
-;; (fa-config-default)
-;; (define-key c-mode-map  [(tab)] 'company-complete)
-;; (define-key c++-mode-map  [(tab)] 'company-complete)
+(require 'function-args)
+(fa-config-default)
+(define-key c-mode-map  [(control tab)] 'moo-complete)
+(define-key c++-mode-map  [(control tab)] 'moo-complete)
+(define-key c-mode-map (kbd "M-o")  'fa-show)
+(define-key c++-mode-map (kbd "M-o")  'fa-show)
 
 ;; company
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(delete 'company-semantic company-backends)
-(define-key c-mode-map  [(tab)] 'company-complete)
-(define-key c++-mode-map  [(tab)] 'company-complete)
+;(require 'company)
+;(add-hook 'after-init-hook 'global-company-mode)
+;(delete 'company-semantic company-backends)
+;(define-key c-mode-map  [(tab)] 'company-complete)
+;(define-key c++-mode-map  [(tab)] 'company-complete)
 ;; (define-key c-mode-map  [(control tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
-;; company-c-headers
-(add-to-list 'company-backends 'company-c-headers)
+;; ;; company-   c-headers
+;(add-to-list 'company-backends 'company-c-headers)
+
+;; ;;这一行不能工作，我需要研究一下
+;;                                         ;(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/c++/4.2.1/")
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
+
+
+;; ;;cedet
+;; (require 'cc-mode)
+;; (require 'semantic)
+
+;; (global-semanticdb-minor-mode 1)
+;; (global-semantic-idle-scheduler-mode 1)
+
+;; (semantic-mode 1)
 
 ;; Available C style:
 ;; “gnu”: The default style for GNU projects
@@ -146,10 +195,6 @@
 (show-smartparens-global-mode +1)
 (smartparens-global-mode 1)
 
-;; Package: projejctile
-(require 'projectile)
-(projectile-global-mode)
-(setq projectile-enable-caching t)
 
 (require 'helm-projectile)
 (helm-projectile-on)
@@ -158,3 +203,13 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(require 'php-mode)
+
+
