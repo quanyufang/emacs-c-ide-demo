@@ -42,7 +42,23 @@
     dired+
     recentf-ext
     ztree
-    vlf))
+    vlf
+    shell-pop
+    diff-hl
+;;    magit
+    flycheck
+    flycheck-tip
+    nyan-mode
+    golden-ratio
+    highlight-numbers
+    discover-my-major
+    rainbow-mode
+    help+
+    help-fns+
+    help-mode+
+    ;;common lisp
+    slime
+    slime-company))
 
 (defun install-packages ()
   "Install all required packages."
@@ -55,6 +71,10 @@
 
 (install-packages)
 
+
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/manual-install/unicad")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE: workgroups2               ;;
 ;;                                    ;;
@@ -69,14 +89,21 @@
 ;; you can change to any prefix key of your choice
 (setq helm-gtags-prefix-key "\C-cg")
 
-(add-to-list 'load-path "~/.emacs.d/custom")
+
 
 (require 'custom-built-in-functions)
-(require 'setup-faces-and-ui)
 (require 'setup-convenience)
 (require 'setup-files)
 (require 'setup-text)
 (require 'setup-data)
+(require 'setup-external)
+(require 'setup-communication)
+(require 'setup-programming)
+(require 'setup-applications)
+(require 'setup-development)
+(require 'setup-environment)
+(require 'setup-faces-and-ui)
+(require 'setup-help)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)
@@ -124,21 +151,6 @@
 ;; (global-semantic-idle-scheduler-mode 1)
 
 ;; (semantic-mode 1)
-
-;; Available C style:
-;; “gnu”: The default style for GNU projects
-;; “k&r”: What Kernighan and Ritchie, the authors of C used in their book
-;; “bsd”: What BSD developers use, aka “Allman style” after Eric Allman.
-;; “whitesmith”: Popularized by the examples that came with Whitesmiths C, an early commercial C compiler.
-;; “stroustrup”: What Stroustrup, the author of C++ used in his book
-;; “ellemtel”: Popular C++ coding standards as defined by “Programming in C++, Rules and Recommendations,” Erik Nyquist and Mats Henricson, Ellemtel
-;; “linux”: What the Linux developers use for kernel development
-;; “python”: What Python developers use for extension modules
-;; “java”: The default style for java-mode (see below)
-;; “user”: When you want to define your own style
-(setq
- c-default-style "linux" ;; set style to "linux"
- )
 
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
 
