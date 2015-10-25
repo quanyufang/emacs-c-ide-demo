@@ -1,3 +1,4 @@
+(provide 'setup-editing)
 ;; GROUP: Editing -> Editing Basics
 
 (setq global-mark-ring-max 5000         ; increase mark ring to contains 5000 entries
@@ -295,4 +296,4 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "M-o") 'prelude-smart-open-line)
 (global-set-key (kbd "M-o") 'open-line)
 
-(provide 'setup-editing)
+(require 'unicad)

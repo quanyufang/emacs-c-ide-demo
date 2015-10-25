@@ -110,7 +110,7 @@
 ;;                     ;;
 ;; GROUP: Files -> Vlf ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'vlf-integrate)
+;;(require 'vlf-integrate)
 ;; automatically use vlf on large file
 ;; when the file exceed large-file-warning-thresholdx
-(setq vlf-application 'dont-ask)
+;;(setq vlf-application 'dont-ask)
