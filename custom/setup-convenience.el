@@ -51,7 +51,21 @@
 ;;                               ;;
 ;; GROUP: Convenience -> Company ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-backends (delete 'company-semantic company-backends))
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+
+;; company-   c-headers
+(require 'company-c-headers)
+(add-to-list 'company-backends 'company-c-headers)
+
+;;这一行不能工作，我需要研究一下
+
+(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/c++/4.2.1/")
+(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/")
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package: expand-region                       ;;

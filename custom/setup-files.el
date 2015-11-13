@@ -28,18 +28,18 @@
 ;; GROUP: Files -> Dired              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq
- dired-dwim-target t            ; if another Dired buffer is visibpple in another window, use that directory as target for Rename/Copy
- dired-recursive-copies 'always         ; "always" means no asking
- dired-recursive-deletes 'top           ; "top" means ask once for top level directory
- dired-listing-switches "-lha"          ; human-readable listing
- )
+  dired-dwim-target t            ; if another Dired buffer is visibpple in another window, use that directory as target for Rename/Copy
+  dired-recursive-copies 'always         ; "always" means no asking
+  dired-recursive-deletes 'top           ; "top" means ask once for top level directory
+  dired-listing-switches "-lha"          ; human-readable listing
+  )
 
 ;; automatically refresh dired buffer on changes
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; if it is not Windows, use the following listing switches
-(when (not (eq system-type 'windows-nt))
-  (setq dired-listing-switches "-lha --group-directories-first"))
+;(when (not (eq system-type 'windows-nt))
+;  (setq dired-listing-switches "-lha --group-directories-first"))
 
 ;;; KEY BINDINGS.
 ;; (define-key ctl-x-map "\C-j" 'dired-jump)
@@ -55,7 +55,7 @@
 ;; (define-key dired-mode-map "Y"  'dired-do-relsymlink)
 ;; (define-key dired-mode-map "%Y" 'dired-do-relsymlink-regexp)
 ;; (define-key dired-mode-map "V" 'dired-do-run-mail)
-(require 'dired-x) ; provide extra commands for Dired
+;(require 'dired-x) ; provide extra commands for Dired
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GROUP: Files -> Dired -> Wdired    ;;
@@ -64,11 +64,11 @@
 ;; - Switch to Wdired by C-x C-q
 ;; - Edit the Dired buffer, i.e. change filenames
 ;; - Commit by C-c C-c, abort by C-c C-k
-(require 'wdired)
-(setq
- wdired-allow-to-change-permissions t   ; allow to edit permission bits
- wdired-allow-to-redirect-links     ; allow to edit symlinks
- )
+;(require 'wdired)
+;(setq
+; wdired-allow-to-change-permissions t   ; allow to edit permission bits
+; wdired-allow-to-redirect-links     ; allow to edit symlinks
+; )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GROUP: Files -> Recentf            ;;
