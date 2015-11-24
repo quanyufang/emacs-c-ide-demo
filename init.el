@@ -10,21 +10,71 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(dired-use-ls-dired (quote unspecified))
- '(ede-project-directories (quote ("/Users/fangyu/tmp")))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin"))))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(defconst demo-packages
+  '(anzu
+    company
+    duplicate-thing
+    ggtags
+    helm
+    helm-gtags
+    helm-projectile
+    helm-swoop
+    function-args
+    clean-aindent-mode
+    comment-dwim-2
+    dtrt-indent
+    ws-butler
+    iedit
+    yasnippet
+    smartparens
+    projectile
+    volatile-highlights
+    undo-tree
+    zygospore
+    workgroups2
+    expand-region
+    ibuffer-vc
+    dired+
+    recentf-ext
+    ztree
+    vlf
+    shell-pop
+    diff-hl
+;;    magit
+    flycheck
+    flycheck-tip
+    nyan-mode
+    golden-ratio
+    highlight-numbers
+    discover-my-major
+    rainbow-mode
+    help+
+    help-fns+
+    help-mode+
+    ;;common lisp
+    slime
+    slime-company))
+
+(defun install-packages ()
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package demo-packages)
+    (unless (package-installed-p package)
+      (package-install package))))
+
+(install-packages)
 
 
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/manual-install/unicad")
-
-(require 'setup-need-packages)
-(install-packages)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE: workgroups2               ;;
 ;;                                    ;;
@@ -40,14 +90,9 @@
 (setq helm-gtags-prefix-key "\C-cg")
 
 
-;(require 'cedet)
-;; ;;cedet
-;; (require 'cc-mode)
-;; (require 'semantic)
-
 
 (require 'custom-built-in-functions)
-
+(require 'setup-convenience)
 (require 'setup-files)
 (require 'setup-text)
 (require 'setup-data)
@@ -61,36 +106,42 @@
 (require 'setup-help)
 (require 'setup-helm)
 (require 'setup-helm-gtags)
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
 (require 'setup-editing)
-(require 'setup-convenience)
-;(require 'setup-cedet)
 
-;(c-mode)
-;(helm-autoresize-mode t)
-(helm-gtags-mode t)
+
+(helm-autoresize-mode t)
+
 
 (windmove-default-keybindings)
 
 ;; function-args
-;; (require 'function-args)
-;; (fa-config-default)
-;; (define-key c-mode-map  [(control tab)] 'moo-complete)
-;; (define-key c++-mode-map  [(control tab)] 'moo-complete)
-;; (define-key c-mode-map (kbd "M-o")  'fa-show)
-;; (define-key c++-mode-map (kbd "M-o")  'fa-show)
+(require 'function-args)
+(fa-config-default)
+(define-key c-mode-map  [(control tab)] 'moo-complete)
+(define-key c++-mode-map  [(control tab)] 'moo-complete)
+(define-key c-mode-map (kbd "M-o")  'fa-show)
+(define-key c++-mode-map (kbd "M-o")  'fa-show)
 
 ;; company
-;; see setup-convenience.el
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(delete 'company-semantic company-backends)
+;(define-key c-mode-map  [(tab)] 'company-complete)
+;(define-key c++-mode-map  [(tab)] 'company-complete)
+(define-key c-mode-map  [(control tab)] 'company-complete)
+(define-key c++-mode-map  [(control tab)] 'company-complete)
+
+;; company-   c-headers
+(add-to-list 'company-backends 'company-c-headers)
+
+;;这一行不能工作，我需要研究一下
+;(add-to-list 'company-c-headers-path-system "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/c++/4.2.1/")
 
 ;; hs-minor-mode for folding source code
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
-
-
-;; (global-semanticdb-minor-mode 1)
-;; (global-semantic-idle-scheduler-mode 1)
-
-;; (semantic-mode 1)
 
 (global-set-key (kbd "RET") 'newline-and-indent)  ; automatically indent when press RET
 
@@ -148,15 +199,10 @@
 (smartparens-global-mode 1)
 
 
-(require 'helm-projectile)
-(helm-projectile-on)
+;(require 'helm-projectile)
+;(helm-projectile-on)
 (setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'native)
-(add-hook 'c-mode-hook 'projectile-mode)
-(add-hook 'php-mode-hook 'projectile-mode)
-(add-hook 'java-mode-hook 'projectile-mode)
-(add-hook 'c++-mode-hook 'projectile-mode)
-
+(setq projectile-indexing-method 'alien)
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
@@ -169,5 +215,4 @@
 
 (require 'php-mode)
 
-(provide 'init)
-;;; init.el ends here
+

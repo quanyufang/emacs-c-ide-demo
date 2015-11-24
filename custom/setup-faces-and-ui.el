@@ -4,9 +4,7 @@
 ;; turn it off to save screen estate
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(case window-system
-  (x w32 ns)
-  (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
