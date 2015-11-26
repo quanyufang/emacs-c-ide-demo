@@ -39,7 +39,9 @@
 
 ;; if it is not Windows, use the following listing switches
 (when (not (eq system-type 'windows-nt))
-  (setq dired-listing-switches "-lha --group-directories-first"))
+  (if (eq system-type 'darwin)
+      (setq dired-listing-switches "-lha")
+      (setq dired-listing-switches "-lha --group-directories-first")))
 
 ;;; KEY BINDINGS.
 ;; (define-key ctl-x-map "\C-j" 'dired-jump)

@@ -202,7 +202,7 @@
 ;(require 'helm-projectile)
 ;(helm-projectile-on)
 (setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'alien)
+(setq projectile-indexing-method 'native)
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)

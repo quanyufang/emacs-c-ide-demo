@@ -25,11 +25,17 @@
 
 ;; change font to Inconsolata for better looking text
 ;; remember to install the font Inconsolata first
-(setq default-frame-alist '((font . "Inconsolata-11")))
+;;(setq default-frame-alist '((font . "Inconsolata-11")))
+(set-frame-font "Consolas-13")
+(set-fontset-font
+ (frame-parameter nil 'font)
+ 'han
+ (font-spec :family "Hiragino Sans GB" ))
 ;; set italic font for italic face, since Emacs does not set italic
 ;; face automatically
 (set-face-attribute 'italic nil
                     :family "Inconsolata-Italic")
+
 
 (set-background-color "black")
 (set-foreground-color "white")

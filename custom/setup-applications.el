@@ -31,4 +31,6 @@
 
 ;; change listing switches based on OS
 (when (not (eq system-type 'windows-nt))
-  (eshell/alias "ls" "ls --color -h --group-directories-first $*"))
+  (if (eq system-type 'darwin)
+      (eshell/alias "ls" "ls -lahG $*")
+    (eshell/alias "ls" "ls --color -h --group-directories-first $*")))
