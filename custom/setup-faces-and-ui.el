@@ -4,7 +4,8 @@
 ;; turn it off to save screen estate
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (not (eq system-type 'darwin))
+    (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 
 ;; the blinking cursor is nothing, but an annoyance
 (blink-cursor-mode -1)
@@ -60,3 +61,6 @@
 
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
+
+(require 'color-theme-sanityinc-tomorrow)
+(load-theme 'grandshell t)
