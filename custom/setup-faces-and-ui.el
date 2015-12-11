@@ -27,7 +27,7 @@
 ;; change font to Inconsolata for better looking text
 ;; remember to install the font Inconsolata first
 ;;(setq default-frame-alist '((font . "Inconsolata-11")))
-(set-frame-font "Consolas-13")
+(set-frame-font "Consolas-15")
 (set-fontset-font
  (frame-parameter nil 'font)
  'han

@@ -89,7 +89,8 @@
     help-mode+
     ;;common lisp
     slime
-    slime-company))
+    slime-company
+    jedi))
 
 (defun install-packages ()
   "Install all required packages."
@@ -200,17 +201,9 @@
  gdb-show-main t
  )
 
-;; Package: clean-aindent-mode
-(require 'clean-aindent-mode)
-(add-hook 'prog-mode-hook 'clean-aindent-mode)
-
 ;; Package: dtrt-indent
 (require 'dtrt-indent)
 (dtrt-indent-mode 1)
-
-;; Package: ws-butler
-(require 'ws-butler)
-(add-hook 'prog-mode-hook 'ws-butler-mode)
 
 ;; Package: yasnippet
 (require 'yasnippet)
@@ -240,5 +233,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(require 'php-mode)
