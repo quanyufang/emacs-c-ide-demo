@@ -111,11 +111,17 @@
 
 (require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-hook 'php-mode-hook
+          (lambda()
+            (c-set-style "php")))
 
 ;(require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook
+          (lambda()
+            (c-set-style "python")))
 
 ;; Package: clean-aindent-mode
 (require 'clean-aindent-mode)
