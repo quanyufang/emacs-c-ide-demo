@@ -91,7 +91,16 @@
     slime
     slime-company
     jedi
+<<<<<<< HEAD
     psvn))
+=======
+    php-mode
+    highlight-symbol
+    color-theme-sanityinc-tomorrow
+    grandshell-theme
+    info+
+    company-c-headers))
+>>>>>>> master
 
 (defun install-packages ()
   "Install all required packages."
