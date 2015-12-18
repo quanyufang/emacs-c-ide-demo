@@ -7,8 +7,8 @@
 (if (not (eq system-type 'darwin))
     (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 
-;; the blinking cursor is nothing, but an annoyance
-(blink-cursor-mode -1)
+;; ;; the blinking cursor is nothing, but an annoyance
+;; (blink-cursor-mode -1)
 
 (setq scroll-margin 0
       scroll-conservatively 100000
@@ -29,7 +29,7 @@
 ;;(setq default-frame-alist '((font . "Inconsolata-11")))
 (if (eq system-type 'darwin)
     (progn
-      (set-frame-font "Consolas-15")
+      (set-frame-font "Consolas-12")
       (set-fontset-font
        (frame-parameter nil 'font)
        'han

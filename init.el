@@ -96,7 +96,8 @@
     color-theme-sanityinc-tomorrow
     grandshell-theme
     info+
-    company-c-headers))
+    company-c-headers
+    psvn))
 
 (defun install-packages ()
   "Install all required packages."
@@ -239,3 +240,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)
