@@ -2,8 +2,11 @@
 感谢原作者 tuhdo。
 
 特点：
+
 1. 支持 C/C++ PHP Python编程
+
 1.1 使用gtags 帮助阅读代码， company 代码补全， projectile 项目管理
+
 2. 拥有几套theme
 
 
@@ -11,7 +14,11 @@
 git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
 
 注意事项：
+
 1. 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
+
 2. 之前编程1-2小时候常出现helm和projectile命令变慢，做了微调，还未验证。
+
 3. 使用最新的emacs > 24
+
 4. 需要在.emacs.d 下面 mkdir snippets
