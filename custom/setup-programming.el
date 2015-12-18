@@ -118,6 +118,7 @@
 ;(require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'run-python)
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook
           (lambda()
@@ -130,3 +131,5 @@
 ;; Package: ws-butler
 (require 'ws-butler)
 (add-hook 'prog-mode-hook 'ws-butler-mode)
+
+(require 'psvn)

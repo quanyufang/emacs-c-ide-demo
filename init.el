@@ -90,7 +90,8 @@
     ;;common lisp
     slime
     slime-company
-    jedi))
+    jedi
+    psvn))
 
 (defun install-packages ()
   "Install all required packages."
@@ -233,3 +234,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)
