@@ -90,7 +90,13 @@
     ;;common lisp
     slime
     slime-company
-    jedi))
+    jedi
+    php-mode
+    highlight-symbol
+    color-theme-sanityinc-tomorrow
+    grandshell-theme
+    info+
+    company-c-headers))
 
 (defun install-packages ()
   "Install all required packages."
