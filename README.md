@@ -14,3 +14,4 @@ git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
 1. 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
 2. 之前编程1-2小时候常出现helm和projectile命令变慢，做了微调，还未验证。
 3. 使用最新的emacs > 24
+4. 需要在.emacs.d 下面 mkdir snippets
