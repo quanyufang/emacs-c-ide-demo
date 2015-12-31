@@ -7,8 +7,8 @@
 (if (not (eq system-type 'darwin))
     (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)))
 
-;; ;; the blinking cursor is nothing, but an annoyance
-;; (blink-cursor-mode -1)
+;; the blinking cursor is nothing, but an annoyance
+(blink-cursor-mode -1)
 
 (setq scroll-margin 0
       scroll-conservatively 100000

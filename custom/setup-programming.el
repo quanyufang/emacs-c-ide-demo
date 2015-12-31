@@ -106,23 +106,6 @@
 (require 'flycheck-tip)
 (flycheck-tip-use-timer 'verbose)
 
-(add-hook 'prog-mode-hook 'helm-gtags-mode)
-
-
-(require 'php-mode)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
-(add-hook 'php-mode-hook
-          (lambda()
-            (c-set-style "php")))
-
-;(require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 'run-python)
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook
-          (lambda()
-            (c-set-style "python")))
 
 ;; Package: clean-aindent-mode
 (require 'clean-aindent-mode)
@@ -132,4 +115,49 @@
 (require 'ws-butler)
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 
+;; psvn
 (require 'psvn)
+
+
+(add-hook 'prog-mode-hook 'helm-gtags-mode)
+
+;; php
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(add-hook 'php-mode-hook
+          (lambda()
+            (c-set-style "php")
+            (define-key php-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+            (define-key php-mode-map (kbd "C-j") 'helm-gtags-select)
+            (define-key php-mode-map (kbd "M-.") 'helm-gtags-dwim)
+            (define-key php-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+            (define-key php-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+            (define-key php-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+            ))
+
+;; python
+(require 'python)
+(defun run-python-once ()
+  (remove-hook 'python-mode-hook 'run-python-once)
+  (python-shell-get-or-create-process))
+(defun jedi-config:setup-keys ()
+  (local-set-key (kbd "M-.") 'jedi:goto-definition)
+  (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
+  (local-set-key (kbd "M-?") 'jedi:show-doc)
+  (local-set-key (kbd "M-/") 'jedi:get-in-function-call))
+
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(autoload 'jedi:setup "jedi" nil t)
+(setq jedi:setup-keys t)
+(add-hook 'python-mode-hook 'jedi-config:setup-keys)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'run-python-once)
+(setq jedi:complete-on-dot t)
+
+
+;; slime
+(require 'slime)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(slime-setup '(slime-fancy slime-banner))
+(require 'slime-autoloads)
+(require 'slime-company)

@@ -97,7 +97,9 @@
     grandshell-theme
     info+
     company-c-headers
-    psvn))
+    psvn
+    ;; python
+    company-jedi))
 
 (defun install-packages ()
   "Install all required packages."
