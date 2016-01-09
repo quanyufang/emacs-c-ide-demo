@@ -154,6 +154,13 @@
 (add-hook 'python-mode-hook 'run-python-once)
 (setq jedi:complete-on-dot t)
 
+;; emacs-lisp-mode
+;; lisp  can only use etags
+(defun elisp-setup-keys ()
+  (local-set-key (kbd "M-.") 'find-tag)
+  (local-set-key (kbd "M-,") 'pop-tag-mark)
+  )
+(add-hook 'emacs-lisp-mode-hook 'elisp-setup-keys)
 
 ;; slime
 (require 'slime)
