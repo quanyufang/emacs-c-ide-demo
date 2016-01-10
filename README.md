@@ -1,9 +1,9 @@
-我在https://github.com/tuhdo/emacs-c-ide-demo基础上尝试配置一套在OS X和Ubuntu（其他Linux暂未测试）上能够立即使用的emacs配置。
+我在https://github.com/tuhdo/emacs-c-ide-demo 基础上尝试配置一套在OS X和Ubuntu（其他Linux暂未测试）上能够立即使用的emacs配置。
 感谢原作者 tuhdo。
 
 特点：
 
-1. 支持 C/C++ PHP Python编程
+1. 支持 C/C++、PHP、Python、Common Lisp编程
 
 1.1 使用gtags 帮助阅读代码， company 代码补全， projectile 项目管理
 
@@ -22,3 +22,11 @@ git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
 3. 使用最新的emacs > 24
 
 4. 需要在.emacs.d 下面 mkdir snippets
+
+python注意事项:
+
+1. 参考 http://tkf.github.io/emacs-jedi/latest/ 
+
+Lisp注意事项:
+
+1. 使用etags: find somewhere|xargs etags
