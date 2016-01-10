@@ -25,9 +25,9 @@
  helm-candidate-number-limit 100 ; limit the number of displayed canidates
  helm-ff-file-name-history-use-recentf t
  helm-move-to-line-cycle-in-source t ; move to end or beginning of source when reaching top or bottom of source.
- ;; helm-buffers-fuzzy-matching t          ; fuzzy matching buffer names when non-nil
+ helm-buffers-fuzzy-matching t          ; fuzzy matching buffer names when non-nil
                                         ; useful in helm-mini that lists buffers
-
+ helm-M-x-fuzzy-match t
  )
 
 (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)

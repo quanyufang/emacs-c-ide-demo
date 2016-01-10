@@ -1,0 +1,16 @@
+(defun insure-dir (d)
+  (cond ((not (file-exists-p d))
+         (make-directory d))
+        ((file-exists-p d)
+         (cond ((file-symlink-p d)
+                (delete-file d)
+                (make-directory d))
+               ((not (file-writable-p d))
+                (set-file-modes d #o755))
+               ((not (file-directory-p d))
+                (delete-file d)
+                (make-directory d))))))
+
+;;(insure-dir "~/.emacs.d/snippets1")
+
+(provide 'mylib)

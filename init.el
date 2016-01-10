@@ -133,6 +133,7 @@
 
 
 (require 'custom-built-in-functions)
+(require 'mylib)
 (require 'setup-convenience)
 (require 'setup-files)
 (require 'setup-text)
@@ -151,6 +152,7 @@
 ;; (require 'setup-cedet)
 (require 'setup-editing)
 
+(insure-dir "~/.emacs.d/snippets")
 
 (helm-autoresize-mode t)
 
