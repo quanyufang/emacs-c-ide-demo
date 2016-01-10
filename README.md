@@ -5,7 +5,7 @@
 
 1. 支持 C/C++、PHP、Python、Common Lisp编程
 
-1.1 使用gtags 帮助阅读代码， company 代码补全， projectile 项目管理
+1.1 使用gtags、etags 帮助阅读代码， company 代码补全， projectile 项目管理
 
 2. 拥有几套theme
 
@@ -30,3 +30,7 @@ python注意事项:
 Lisp注意事项:
 
 1. 使用etags: find somewhere|xargs etags
+
+gtags使用
+
+1. 这个配置中C/C++和PHP代码使用gtags，在OS X上面使用Homebrew安装global即可。安装完成之后，在项目目录下面执行gtag，也可以使用helm提供的命令直接在emacs内部生产和更新tags
