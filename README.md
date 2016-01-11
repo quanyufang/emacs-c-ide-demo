@@ -1,6 +1,10 @@
 我在https://github.com/tuhdo/emacs-c-ide-demo 基础上尝试配置一套在OS X和Ubuntu（其他Linux暂未测试）上能够立即使用的emacs配置。
 感谢原作者 tuhdo。
 
+emacs安装：
+
+1. mac 下，个人推荐 http://emacsformacosx.com/
+
 特点：
 
 1. 支持 C/C++、PHP、Python、Common Lisp编程
