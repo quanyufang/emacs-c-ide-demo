@@ -27,17 +27,18 @@
 ;; change font to Inconsolata for better looking text
 ;; remember to install the font Inconsolata first
 ;;(setq default-frame-alist '((font . "Inconsolata-11")))
-(if (eq system-type 'darwin)
-    (progn
-      (set-frame-font "Consolas-12")
-      (set-fontset-font
-       (frame-parameter nil 'font)
-       'han
-       (font-spec :family "Hiragino Sans GB" ))
-      ;; set italic font for italic face, since Emacs does not set italic
-      ;; face automatically
-      (set-face-attribute 'italic nil
-			  :family "Inconsolata-Italic")))
+(if (window-system)
+    (if (eq system-type 'darwin)
+        (progn
+          (set-frame-font "Courier New-13")
+          (set-fontset-font
+           (frame-parameter nil 'font)
+           'han
+           (font-spec :family "Hiragino Sans GB" )
+           ;; set italic font for italic face, since Emacs does not set italic
+           ;; face automatically
+           (set-face-attribute 'italic nil
+                               :family "Inconsolata-Italic")))))
 
 
 (set-background-color "black")
