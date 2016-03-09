@@ -95,7 +95,7 @@
 ;;                                         ;;
 ;; GROUP: Programming -> Tools -> Flycheck ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(require 'flycheck)
+(require 'flycheck)
 ;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -131,9 +131,14 @@
             (define-key php-mode-map (kbd "C-j") 'helm-gtags-select)
             (define-key php-mode-map (kbd "M-.") 'helm-gtags-dwim)
             (define-key php-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+            (define-key php-mode-map (kbd "M-*") 'helm-gtags-find-rtag)
             (define-key php-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
             (define-key php-mode-map (kbd "C-c >") 'helm-gtags-next-history)
             ))
+(require 'php-auto-yasnippets)
+(setq php-auto-yasnippets-path "~/.emacs.d/manual-install/php-auto-yasnippets")
+(setq php-auto-yasnippet-php-program (concat php-auto-yasnippets-path "/Create-PHP-YASnippet.php"))
+(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 
 ;; python
 (require 'python)

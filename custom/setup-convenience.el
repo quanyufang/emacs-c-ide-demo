@@ -26,7 +26,7 @@
 
 ;; GROUP: Convenience -> HL Line
 (global-hl-line-mode)
-
+(set-face-background 'hl-line "gray43")
 ;; GROUP: Convenience -> Ibuffer
 (setq ibuffer-use-other-window t) ;; always display ibuffer in another window
 

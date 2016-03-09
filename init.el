@@ -3,8 +3,9 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold 400000000)
 (setq inhibit-startup-message t)
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2013/bin/x86_64-darwin/"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,7 +21,7 @@
     ("82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default)))
  '(exec-path
    (quote
-    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin")))
+    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_9" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin" "/usr/local/bin" "~/.emacs.d/manual-install/mew-6.7/bin" "/Library/TeX/Distributions/Programs/texbin" "/Library/TeX/texbin/xelatex")))
  '(fci-rule-color "#d6d6d6")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -99,7 +100,11 @@
     company-c-headers
     psvn
     ;; python
-    company-jedi))
+    company-jedi
+    ;; markdown-mode
+    ;; mew
+    w3m
+    ))
 
 (defun install-packages ()
   "Install all required packages."
@@ -116,6 +121,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/manual-install/unicad")
+(add-to-list 'load-path "~/.emacs.d/manual-install/mew-6.7")
+(add-to-list 'load-path "~/.emacs.d/manual-install/php-auto-yasnippets")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE: workgroups2               ;;
 ;;                                    ;;
@@ -151,7 +158,9 @@
 ;; (require 'setup-ggtags)
 ;; (require 'setup-cedet)
 (require 'setup-editing)
+(require 'setup-email)
 
+;; remember to copy or create snippets you need
 (insure-dir "~/.emacs.d/snippets")
 
 (helm-autoresize-mode t)
@@ -245,3 +254,13 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
+;(setenv "LC_CTYPE" "en_US.UTF-8")
+(global-set-key (kbd "C-x w f") 'toggle-frame-maximized)
+
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell
+         (replace-regexp-in-string "[[:space:]\n]*$" ""
+                                   (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+(when (equal system-type 'darwin) (set-exec-path-from-shell-PATH))

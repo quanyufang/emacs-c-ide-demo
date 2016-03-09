@@ -297,3 +297,19 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "M-o") 'open-line)
 
 (require 'unicad)
+
+;; ;; markdown
+;; (autoload 'markdown-mode "markdown-mode"
+;;   "Major mode for editing Markdown files" t)
+;; (add-to-list 'auto-mode-alist '("\\.markdown\\'". markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.md\\'". markdown-mode))
+
+;; org-mode
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+(setq org-todo-keywords
+      '((sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+        (sequence "TODO(T!)" "DOING(I!)" """|" "DONE(D@)3" "CANCELED(C@/!)")))
+
+
+(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                              "xelatex -interaction nonstopmode %f"))
