@@ -26,7 +26,6 @@ git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
 
 3. 使用最新的emacs > 24
 
-4. 需要在.emacs.d 下面 mkdir snippets
 
 python注意事项:
 
