@@ -1,28 +1,26 @@
 # 这个项目的目标
-在https://github.com/tuhdo/emacs-c-ide-demo 基础上尝试配置一套在OS X上能够立即使用的emacs配置。
+尝试配置一套在OS X上能够立即使用的emacs配置,这套配置能够满足C/C++、PHP、Python以及Common Lisp（ELisp）开发人员的一般需求。
+
 # 感谢
-感谢原作者[tuhdo](https://github.com/tuhdo "")。目前使用这个项目提供的emacs配置文件您可能还会遇到些小问题，我正在改进中。力图改进到不需要做任何额外的配置（网络问题另说）。
+感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
 
-# 关于项目的名字
-目前这个名字实在是一个让人看起来没有兴趣的东西，后面如果这个项目有点用处了，会修改为一个合适的名字。
+# 特点：
+1. 支持 C/C++、PHP、Python、Common Lisp编程。
+1.1 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
+1.2 python使用jedi来完成代码补足的功能。 
+1.3 使用projectile 进行项目管理。
+1.4 使用强大的helm。
+2. 拥有几套theme，可以耍酷。
 
-# 项目使用方法简介
+
+
+# 使用方法简介
 ## emacs安装：
-当然需要先按照emacs，mac下，个人推荐 http://emacsformacosx.com/， 请前往这个网站下载软件安装。
+当然需要先安装emacs，mac系统个人推荐 http://emacsformacosx.com/。
 
 ## 配置文件的使用
 使用方法：
 git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
-
-# 特点：
-
-1. 支持 C/C++、PHP、Python、Common Lisp编程。
-
-1.1 使用gtags、etags 帮助阅读代码， company 代码补全（python使用另一套）， projectile 项目管理，使用helm。关于这两个东西的强大能力体验之后就能明白。
-2. 拥有几套theme，耍耍酷。
-3. 基本统一了几种语言在阅读过程中代码的跳转等
-
-
 
 
 # 注意事项：
