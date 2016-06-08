@@ -6,10 +6,15 @@
 
 # 特点：
 1. 支持 C/C++、PHP、Python、Common Lisp编程。
+2. 
 1.1 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
+
 1.2 python使用jedi来完成代码补足的功能。 
+
 1.3 使用projectile 进行项目管理。
+
 1.4 使用强大的helm。
+
 2. 拥有几套theme，可以耍酷。
 
 
