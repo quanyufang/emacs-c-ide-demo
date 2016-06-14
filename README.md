@@ -29,6 +29,8 @@
 使用方法：
 git clone https://github.com/tuhdo/emacs-c-ide-demo .emacs.d
 
+## 常用命令
+我整理了该配置下可以使用的命令，还比较初级，但基本常用的都能找到 ，见  [EmacsCommand.md](https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "")
 
 # 注意事项：
 1. 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
