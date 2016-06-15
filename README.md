@@ -5,6 +5,8 @@
 感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
 
 ## 特点：
+* 自动加载配置文件依赖的包文件。
+    * 个别还未纳入package archives管理的包，放在manual-install目录下管理（包括自动识别文件编码的unicad)
 * 支持 C/C++、PHP、Python、Common Lisp编程。
 * 代码阅读和编写支持
     * 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。

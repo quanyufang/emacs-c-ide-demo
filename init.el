@@ -47,7 +47,7 @@
  '(vc-annotate-very-old-color nil))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(defconst demo-packages
+(defconst packages-need
   '(anzu
     company
     duplicate-thing
@@ -112,7 +112,7 @@
   (interactive)
   (unless package-archive-contents
     (package-refresh-contents))
-  (dolist (package demo-packages)
+  (dolist (package packages-need)
     (unless (package-installed-p package)
       (package-install package))))
 
