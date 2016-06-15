@@ -1,27 +1,22 @@
-# 这套配置文件的目标
+## 这套配置文件的目标
 尝试配置一套在OS X上能够立即使用的emacs配置,这套配置能够满足C/C++、PHP、Python以及Common Lisp（ELisp）开发人员的一般需求。
 
-# 感谢
+## 感谢
 感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
 
-# 特点：
-1. 支持 C/C++、PHP、Python、Common Lisp编程。
+## 特点：
+* 支持 C/C++、PHP、Python、Common Lisp编程。
+* 代码阅读和编写支持
+    * 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
+    * python使用jedi来完成代码补足的功能。 
+    * 使用projectile 进行项目管理。
+    * 使用强大的helm。
 
-2. 代码阅读和编写支持
-
-2.1 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
-
-2.2 python使用jedi来完成代码补足的功能。 
-
-2.3 使用projectile 进行项目管理。
-
-2.4 使用强大的helm。
-
-3. 强大的编辑能力
-3.1 undo-tree可以有效地管理你的编辑历史，提供类树形图形管理界面。
-3.2 helm-ring.el提供了一套工具，能够帮你展示之前你copy-cut(使用更准确的emacs用语kill)的内容，本配置中使用M-y(命令helm-show-kill-ring）就能展示你的编辑历史中使用过的编辑历史，使用C-n,C-p可以来回查看，RET（回车）即可把内容复制到当前的光标位置。
-4. 拥有几套theme，可以耍酷。
-5. 当前emacs自带的package也非常强大，比如，org-mode非常适合写作和管理TODO-LIST。
+* 强大的编辑能力
+    * undo-tree可以有效地管理你的编辑历史，提供类树形图形管理界面。
+    * helm-ring.el提供了一套工具，能够帮你展示之前你copy-cut(使用更准确的emacs用语kill)的内容，本配置中使用M-y(命令helm-show-kill-ring）就能展示你的编辑历史中使用过的编辑历史，使用C-n,C-p可以来回查看，RET（回车）即可把内容复制到当前的光标位置。
+* 拥有几套theme，可以耍酷。
+* 当前emacs自带的package也非常强大，比如，org-mode非常适合写作和管理TODO-LIST。
 
 
 # 使用方法简介
