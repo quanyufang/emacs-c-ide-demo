@@ -17,8 +17,11 @@
 
 2.4 使用强大的helm。
 
-3. 拥有几套theme，可以耍酷。
-
+3. 强大的编辑能力
+3.1 undo-tree可以有效地管理你的编辑历史，提供类树形图形管理界面。
+3.2 helm-ring.el提供了一套工具，能够帮你展示之前你copy-cut(使用更准确的emacs用语kill)的内容，本配置中使用M-y(命令helm-show-kill-ring）就能展示你的编辑历史中使用过的编辑历史，使用C-n,C-p可以来回查看，RET（回车）即可把内容复制到当前的光标位置。
+4. 拥有几套theme，可以耍酷。
+5. 当前emacs自带的package也非常强大，比如，org-mode非常适合写作和管理TODO-LIST。
 
 
 # 使用方法简介
