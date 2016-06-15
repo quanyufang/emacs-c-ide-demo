@@ -11,8 +11,9 @@
 * 代码阅读和编写支持
     * 使用gtags、etags 帮助阅读代码， company 代码补全。统一了 C/C++、PHP、Python在阅读过程中代码的跳转使用的快捷键等。
     * python使用jedi来完成代码补足的功能。 
-    * 使用projectile 进行项目管理。
-    * 使用强大的helm。
+    * 使用projectile 进行项目管理，可以快速的在项目内部查找文件，在项目中grep，在和helm结合起来使用后，非常方便，唯一的缺点是，在数千个文件构成的项目初始化时需要约1分钟的初始化时间。[projectile项目](https://github.com/bbatsov/projectile "")在此。
+    * 使用强大的helm(Helm是Emacs的增量选择框架，具体一点类似google search框当中给你的输入提示，但是强大很多，可以支持的范围很广，包括查找文件是，打开的buffer等，可以这么说，用过helm才会知道写代码的时候需要记住的东西可以那么少，而要找到的时候又是那么快),参考[helm项目](https://emacs-helm.github.io/helm/ "")在此。
+        * 需要特别说明的是，当你用了helm以后，emacs的快捷键记不住也没什么，你可以用过helm-M-x命令（该配置已经绑定在M-x）来快速的查找适合的命令。
 
 * 强大的编辑能力
     * undo-tree可以有效地管理你的编辑历史，提供类树形图形管理界面。
