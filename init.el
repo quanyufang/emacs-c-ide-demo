@@ -101,7 +101,8 @@
     psvn
     ;; python
     company-jedi
-    ;; markdown-mode
+    markdown-mode
+    markdown-mode+
     ;; mew
     w3m
     ))
@@ -158,9 +159,9 @@
 ;; (require 'setup-ggtags)
 ;; (require 'setup-cedet)
 (require 'setup-editing)
-(require 'setup-email)
+;; (require 'setup-email)
 
-;; remember to copy or create snippets you need
+;; make sure that directory snippets needed exists
 (insure-dir "~/.emacs.d/snippets")
 
 (helm-autoresize-mode t)
