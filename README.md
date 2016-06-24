@@ -35,18 +35,31 @@ git clone https://github.com/quanyufang/emacs-config-files .emacs.d
 我整理了该配置下可以使用的命令，还比较初级，但基本常用的都能找到 ，见  [EmacsCommand.md](https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "")
 
 # 注意事项：
-1. 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
-2. 使用最新的emacs > 24
+* 第一次打开运行eamcs时，需要下载所有依赖的包，需要消耗一些时间
+* 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
+* (= emacs-major-version 24), 最新的预览版Emacs该配置测试不通过。
 
 
 # python注意事项:
 1. 参考 http://tkf.github.io/emacs-jedi/latest/ 
+2. 我们把一些快捷键尽量统一了，可以参考custom/setup-programming.el
+
+# GTAGS使用(GNU GLOBAL)
+* 为什么选用GTAGS?
+    * 对GNU Global进行了解之后，特别是快速所以符号引用，对于阅读代码来说这个是非常高效的，这是对比etags的一个重要优势，但是支持得语言比etags少，比如Lisp就不支持，不过写Lisp程序的人也比较少。
+    * 确实更快，对比一般IDE，你可以在每次操作赢得1秒以上的操作性能和数秒的查询性能（当然IDE也在改进），这个数是我的主观体验。而且我说的是你在8G+ 内存和SSD硬盘这样的机器上。
+    * 建立的索引更多。
+* 这个配置中为方便使用GTAGS做了哪些定制？
+    * 尽量统一不同语言使用GTAGS的快捷键。
+* 外部依赖
+    * 这个配置中C/C++和PHP代码使用gtags，在OS X上面使用Homebrew安装global即可。安装完成之后，在项目目录下面执行gtags，也可以使用helm提供的命令直接在emacs内部生产和更新tags(helm-gtags-update-tags)
+
 
 # Lisp注意事项:
-1. 使用etags来建立标签: find somewhere|xargs etags。
+1. 使用etags来建立标签: 
+示例：find . -name "*.el"|xargs etags。
+2. 原因就是gtags不支持Lisp语言
 
-# gtags使用
-1. 这个配置中C/C++和PHP代码使用gtags，在OS X上面使用Homebrew安装global即可。安装完成之后，在项目目录下面执行gtag，也可以使用helm提供的命令直接在emacs内部生产和更新tags
 
 # flycheck的说明：
 
