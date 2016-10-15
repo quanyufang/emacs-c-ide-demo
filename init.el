@@ -110,6 +110,7 @@
     eclim
     company-emacs-eclim
     ;;ac-emacs-eclim
+    column-enforce-mode
     ))
 
 (defun install-packages ()
