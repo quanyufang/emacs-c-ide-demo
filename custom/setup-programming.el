@@ -103,8 +103,8 @@
 ;;                                                            ;;
 ;; GROUP: Flycheck Tip, but just consider it part of Flycheck ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'flycheck-tip)
-(flycheck-tip-use-timer 'verbose)
+;;(require 'flycheck-tip)
+;;(flycheck-tip-use-timer 'verbose)
 
 
 ;; Package: clean-aindent-mode
@@ -173,3 +173,19 @@
 (slime-setup '(slime-fancy slime-banner))
 (require 'slime-autoloads)
 (require 'slime-company)
+
+;;java
+(add-hook 'java-mode-hook
+          (lambda()
+            (define-key java-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+            (define-key java-mode-map (kbd "C-j") 'helm-gtags-select)
+            (define-key java-mode-map (kbd "M-.") 'helm-gtags-dwim)
+            (define-key java-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+            (define-key java-mode-map (kbd "M-*") 'helm-gtags-find-rtag)
+            (define-key java-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+            (define-key java-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+            ))
+
+
+(add-hook 'prog-mode-hook 'column-enforce-mode)
+(setq column-enforce-column 100)
