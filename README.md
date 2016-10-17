@@ -1,5 +1,7 @@
 ## 这套配置文件的目标
-尝试配置一套在OS X上能够立即使用的emacs配置,这套配置能够满足C/C++、PHP、Python以及Common Lisp（ELisp）开发人员的一般需求。
+1. 满足C/C++、PHP、Python以及Common Lisp（ELisp）开发人员的一般需求。
+2. 支持多个系统图形界面和命令行界面
+2.1 目前支持OS X图形界面，OS X终端，CentOS 终端， Ubuntu 终端
 
 ## 感谢
 感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
@@ -40,9 +42,10 @@ git clone https://github.com/quanyufang/emacs-config-files .emacs.d
 我整理了该配置下可以使用的命令，还比较初级，但基本常用的都能找到 ，见  [EmacsCommand.md](https://github.com/quanyufang/emacs-config-files/blob/master/EmacsCommand.md "")
 
 # 注意事项：
-* 第一次打开运行eamcs时，需要下载所有依赖的包，需要消耗一些时间
-* 可能因为墙的原因，melpa.milkbox.net:80很慢，可以尝试VPN
-* (= emacs-major-version 24), 最新的预览版Emacs该配置测试不通过。
+* 第一次打开运行eamcs时，需要下载所有依赖的包，需要消耗一些时间，主要是从melpa.milkbox.net下载需要的包。
+* 最近几次测试访问melpa.milkbox.net:80速度已经可以接受，但还是需要十分钟左右时间下载。
+* (= emacs-major-version 24), 最新的预览版Emacs该配置测试不通过。低于24版的版本也不行。
+* CentOS上面我使用源码安装GNU Global
 
 
 # python注意事项:
