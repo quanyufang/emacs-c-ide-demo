@@ -89,13 +89,14 @@
 ;; Interface to eclipse via eclim
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'eclim)
-;; (global-eclim-mode)
+(global-eclim-mode)
 
+(require 'eclimd)
 ;; Variables
 (setq eclim-auto-save t
       eclim-executable "~/eclipse/Eclipse.app/Contents/Eclipse/eclim"
       eclimd-wait-for-process nil
-      eclimd-default-workspace "~/MyDeveloper/workspace"
+      eclimd-default-workspace "~/workspace"
       eclim-use-yasnippet nil
       eclim-autoupdate-problems nil
       eclim-print-debug-messages nil
@@ -103,15 +104,24 @@
       help-at-pt-timer-delay 0.3
       )
 
+(custom-set-variables
+ '(eclim-eclipse-dirs '("~/eclipse/Eclipse.app/Contents/Eclipse"))
+ '(eclim-executable "~/eclipse/Eclipse.app/Contents/Eclipse/eclim"))
+
 ;; Call the help framework with the settings above & activate
 ;; eclim-mode
 (help-at-pt-set-timer)
 
-;; Hook eclim up with auto complete mode
-(require 'auto-complete-config)
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
+
+;; (require 'auto-complete-config)
 ;; (ac-config-default)
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
+
+;; (require 'ac-emacs-eclim-source)
+;; (ac-emacs-eclim-config)
 
 ;; restore the window configuration after running certain eclim commands
 ;; (add-hook 'eclim-problems-mode-hook 'winner-undo)

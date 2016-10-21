@@ -154,7 +154,7 @@
 (require 'setup-data)
 (require 'setup-external)
 (require 'setup-communication)
-;;(require 'setup-emacs-eclim)
+(require 'setup-emacs-eclim)
 (require 'setup-programming)
 (require 'setup-applications)
 (require 'setup-development)
@@ -237,11 +237,6 @@
 (yas-global-mode 1)
 
 
-;(require 'helm-projectile)
-;(helm-projectile-on)
-(setq projectile-completion-system 'helm)
-(setq projectile-indexing-method 'native)
-
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 (custom-set-faces
@@ -262,3 +257,7 @@
     (setq exec-path (split-string path-from-shell path-separator))))
 (when (equal system-type 'darwin) (set-exec-path-from-shell-PATH))
 (put 'narrow-to-region 'disabled nil)
+
+;(setq mac-option-modifier 'super)
+;(setq mac-command-modifier 'meta)
+

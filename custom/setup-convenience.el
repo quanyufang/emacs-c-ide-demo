@@ -83,5 +83,12 @@
 
 ;; Package: projejctile
 (require 'projectile)
-(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(if (eq system-type 'windows-nt)
+    (setq projectile-indexing-method 'alien)
+  (setq projectile-indexing-method 'native))
 (setq projectile-enable-caching t)
+(setq projectile-require-project-root t)
+(projectile-global-mode)
+(require 'helm-projectile)
+(helm-projectile-on)

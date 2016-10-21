@@ -29,7 +29,7 @@
  (lambda ()
    (setq pcomplete-cycle-completions nil)))
 
-;; change listing switches based on OS
+;;  ls command switches, in OS X and Linux/Unix are different
 (when (not (eq system-type 'windows-nt))
   (if (eq system-type 'darwin)
       (eshell/alias "ls" "ls -lahG $*")

@@ -80,7 +80,10 @@
 
 (show-smartparens-global-mode +1)
 (smartparens-global-mode 1)
-
+(sp-pair "(" nil :unless '(sp-point-before-word-p))
+(sp-pair "[" nil :unless '(sp-point-before-word-p))
+(sp-pair "{" nil :unless '(sp-point-before-word-p))
+(sp-local-pair 'latex-mode "$" nil :unless '(sp-point-before-word-p))
 ;; PACKAGE: comment-dwim-2
 (global-set-key (kbd "M-;") 'comment-dwim-2)
 
