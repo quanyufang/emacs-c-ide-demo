@@ -18,8 +18,6 @@
   (eclim-mode)
   (subword-mode)
   (yas-minor-mode)
-  (smartscan-mode)
-  (idle-highlight-mode)
 
   (define-key c-mode-base-map (kbd "<f2>") 'eclim-problems)
   (define-key c-mode-base-map (kbd "M-m") 'eclim-java-find-declaration)
@@ -96,7 +94,7 @@
 (setq eclim-auto-save t
       eclim-executable "~/eclipse/Eclipse.app/Contents/Eclipse/eclim"
       eclimd-wait-for-process nil
-      eclimd-default-workspace "~/workspace"
+      eclimd-default-workspace "~/ykcode/workspace"
       eclim-use-yasnippet nil
       eclim-autoupdate-problems nil
       eclim-print-debug-messages nil

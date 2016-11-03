@@ -136,7 +136,7 @@
             (define-key php-mode-map (kbd "C-c >") 'helm-gtags-next-history)
             ))
 (require 'php-auto-yasnippets)
-(setq php-auto-yasnippets-path "~/.emacs.d/manual-install/php-auto-yasnippets")
+(setq php-auto-yasnippets-path "~/.emacs.d/elpa/php-auto-yasnippets-20141128.1411")
 (setq php-auto-yasnippet-php-program (concat php-auto-yasnippets-path "/Create-PHP-YASnippet.php"))
 (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 
