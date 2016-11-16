@@ -45,7 +45,7 @@ git clone https://github.com/quanyufang/emacs-config-files .emacs.d
 # 注意事项：
 * 第一次打开运行eamcs时，需要下载所有依赖的包，需要消耗一些时间，主要是从melpa.milkbox.net下载需要的包。
 * 最近几次测试访问melpa.milkbox.net:80速度已经可以接受，但还是需要十分钟左右时间下载。
-* (= emacs-major-version 24), 最新的预览版Emacs该配置测试不通过。低于24版的版本也不行。
+* (or (= emacs-major-version 24) (= emacs-major-version 25))。低于24版的版本不行。如果当您使用到emacs25需要到php-mode 下执行rm *.elc,具体的原因我还没有分析。
 * CentOS上面我使用源码安装GNU Global
 
 
@@ -65,9 +65,8 @@ git clone https://github.com/quanyufang/emacs-config-files .emacs.d
 
 
 # Lisp注意事项:
-1. 使用etags来建立标签: 
+1. 目前gtags还不支持lisp语言，使用etags来建立标签: 
 示例：find . -name "*.el"|xargs etags。
-2. 原因就是gtags不支持Lisp语言
 
 
 # flycheck的说明：

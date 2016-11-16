@@ -120,6 +120,7 @@
 
 
 (add-hook 'prog-mode-hook 'helm-gtags-mode)
+;;C/C++
 
 ;; php
 (require 'php-mode)

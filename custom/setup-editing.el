@@ -56,10 +56,10 @@
 (setq dtrt-indent-verbosity 0)
 
 ;; PACKAGE: ws-butler
-(require 'ws-butler)
-(add-hook 'c-mode-common-hook 'ws-butler-mode)
-(add-hook 'text-mode 'ws-butler-mode)
-(add-hook 'fundamental-mode 'ws-butler-mode)
+;;(require 'ws-butler)
+;;(add-hook 'c-mode-common-hook 'ws-butler-mode)
+;;(add-hook 'text-mode 'ws-butler-mode)
+;;(add-hook 'fundamental-mode 'ws-butler-mode)
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree

@@ -19,6 +19,7 @@
  '(custom-safe-themes
    (quote
     ("f9574c9ede3f64d57b3aa9b9cef621d54e2e503f4d75d8613cbcc4ca1c962c21" "b9293d120377ede424a1af1e564ba69aafa85e0e9fd19cf89b4e15f8ee42a8bb" "8d1e447fea4fc82aac533ca87be3f120daffc2905229c01f07ba18ad1edcc376" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default)))
+ '(ecb-options-version "2.50")
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "~/bin/global/bin" "~/.emacs.d/manual-install/mew-6.7/bin" "/Library/TeX/Distributions/Programs/texbin" "/Library/TeX/texbin/xelatex")))
@@ -90,7 +91,9 @@
     help+
     help-fns+
     help-mode+
-    ;;common lisp
+    ;;c/c++
+    ecb
+    ;;commonq lisp
     slime
     slime-company
     jedi
@@ -132,7 +135,6 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/manual-install/unicad")
 (add-to-list 'load-path "~/.emacs.d/manual-install/mew-6.7")
-(add-to-list 'load-path "~/.emacs.d/manual-install/php-auto-yasnippets")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE: workgroups2               ;;
 ;;                                    ;;
@@ -261,5 +263,5 @@
 (when (equal system-type 'darwin) (set-exec-path-from-shell-PATH))
 (put 'narrow-to-region 'disabled nil)
 
-(setq mac-option-modifier 'super)
-(setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'super)
+;; (setq mac-command-modifier 'meta)

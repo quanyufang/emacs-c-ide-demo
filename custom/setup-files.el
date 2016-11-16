@@ -70,6 +70,7 @@
 (setq
  wdired-allow-to-change-permissions t   ; allow to edit permission bits
  wdired-allow-to-redirect-links     ; allow to edit symlinks
+ nil
  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
