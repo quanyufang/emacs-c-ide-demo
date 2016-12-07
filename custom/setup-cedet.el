@@ -18,15 +18,28 @@
 
 (add-hook 'c-mode-hook
           (lambda()
-            (c-set-style 'gnu)
-            (define-key php-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
-            (define-key php-mode-map (kbd "C-j") 'helm-gtags-select)
-            (define-key php-mode-map (kbd "M-.") 'helm-gtags-dwim)
-            (define-key php-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-            (define-key php-mode-map (kbd "M-*") 'helm-gtags-find-rtag)
-            (define-key php-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-            (define-key php-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+            (c-set-style "gnu")
+            (define-key c-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+            (define-key c-mode-map (kbd "C-j") 'helm-gtags-select)
+            (define-key c-mode-map (kbd "M-.") 'helm-gtags-dwim)
+            (define-key c-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+            (define-key c-mode-map (kbd "M-*") 'helm-gtags-find-rtag)
+            (define-key c-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+            (define-key c-mode-map (kbd "C-c >") 'helm-gtags-next-history)
             ))
+
+(add-hook 'c++-mode-hook
+          (lambda()
+            (c-set-style "gnu")
+            (define-key c++-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+            (define-key c++-mode-map (kbd "C-j") 'helm-gtags-select)
+            (define-key c++-mode-map (kbd "M-.") 'helm-gtags-dwim)
+            (define-key c++-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+            (define-key c++-mode-map (kbd "M-*") 'helm-gtags-find-rtag)
+            (define-key c++-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+            (define-key c++-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+            ))
+
 
 
 ;; Enable EDE only in C/C++

@@ -1,6 +1,9 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '(
+             ("melpa" . "http://melpa.milkbox.net/packages/")
+                                        ;("melpa" . "https://melpa.org/packages/")
+             ))
 (package-initialize)
 
 (setq gc-cons-threshold 400000000)
@@ -26,6 +29,9 @@
  '(fci-rule-color "#d6d6d6")
  '(helm-tramp-verbose 10)
  '(line-number-mode nil)
+ '(package-selected-packages
+   (quote
+    (chinese-pyim zygospore ztree ws-butler workgroups2 w3m volatile-highlights vlf undo-tree smartparens slime-company shell-pop recentf-ext rainbow-mode psvn powerline pos-tip php-auto-yasnippets nyan-mode markdown-mode+ jedi info+ iedit ibuffer-vc highlight-symbol highlight-numbers help-mode+ help-fns+ help+ helm-swoop helm-projectile helm-gtags grandshell-theme golden-ratio ggtags function-args flycheck-tip expand-region ecb duplicate-thing dtrt-indent discover-my-major dired+ diff-hl company-jedi company-emacs-eclim company-c-headers comment-dwim-2 column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode chinese-pyim-basedict badger-theme anzu ac-emacs-eclim abyss-theme)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -117,6 +123,7 @@
     company-emacs-eclim
     ;;ac-emacs-eclim
     column-enforce-mode
+    ;;
     ))
 
 (defun install-packages ()
@@ -135,6 +142,8 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/manual-install/unicad")
 (add-to-list 'load-path "~/.emacs.d/manual-install/mew-6.7")
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PACKAGE: workgroups2               ;;
 ;;                                    ;;
@@ -169,7 +178,7 @@
 (require 'setup-helm)
 (require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)
-;; (require 'setup-cedet)
+(require 'setup-cedet)
 (require 'setup-editing)
 
 ;; make sure that directory snippets needed exists
@@ -265,3 +274,22 @@
 
 ;; (setq mac-option-modifier 'super)
 ;; (setq mac-command-modifier 'meta)
+
+;; customize frame title, first field show eamcs version
+(setq-default frame-title-format
+              '(:eval
+                (format "%s%d %s@%s: %s %s"
+                        "Emacs@"
+                        emacs-major-version
+                        (or (file-remote-p default-directory 'user)
+                            user-real-login-name)
+                        (or (file-remote-p default-directory 'host)
+                            system-name)
+                        (buffer-name)
+                        (cond
+                         (buffer-file-truename
+                          (concat "(" buffer-file-truename ")"))
+                         (dired-directory
+                          (concat "{" dired-directory "}"))
+                         (t
+                          "[no file]")))))
