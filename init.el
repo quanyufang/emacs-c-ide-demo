@@ -1,9 +1,10 @@
 (require 'package)
+(set 'package-archives '())
 (add-to-list 'package-archives
-             '(
-             ("melpa" . "http://melpa.milkbox.net/packages/")
+             '("melpa" . "https://melpa.org/packages"))
+                                        ;'("melpa" . "http://melpa.milkbox.net/packages/")
                                         ;("melpa" . "https://melpa.org/packages/")
-             ))
+
 (package-initialize)
 
 (setq gc-cons-threshold 400000000)
@@ -32,6 +33,9 @@
  '(package-selected-packages
    (quote
     (chinese-pyim zygospore ztree ws-butler workgroups2 w3m volatile-highlights vlf undo-tree smartparens slime-company shell-pop recentf-ext rainbow-mode psvn powerline pos-tip php-auto-yasnippets nyan-mode markdown-mode+ jedi info+ iedit ibuffer-vc highlight-symbol highlight-numbers help-mode+ help-fns+ help+ helm-swoop helm-projectile helm-gtags grandshell-theme golden-ratio ggtags function-args flycheck-tip expand-region ecb duplicate-thing dtrt-indent discover-my-major dired+ diff-hl company-jedi company-emacs-eclim company-c-headers comment-dwim-2 column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode chinese-pyim-basedict badger-theme anzu ac-emacs-eclim abyss-theme)))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "smtp.gmail.com")
+ '(smtpmail-smtp-service 587)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -180,6 +184,7 @@
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
+(require 'setup-pyim)
 
 ;; make sure that directory snippets needed exists
 (insure-dir "~/.emacs.d/snippets")

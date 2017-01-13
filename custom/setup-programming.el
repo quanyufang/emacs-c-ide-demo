@@ -189,4 +189,4 @@
 
 
 (add-hook 'prog-mode-hook 'column-enforce-mode)
-(setq column-enforce-column 80)
+(setq column-enforce-column 120)
