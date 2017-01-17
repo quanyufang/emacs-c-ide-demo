@@ -1,8 +1,7 @@
 (require 'package)
 (set 'package-archives '())
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages"))
-                                        ;'("melpa" . "http://melpa.milkbox.net/packages/")
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
                                         ;("melpa" . "https://melpa.org/packages/")
 
 (package-initialize)
