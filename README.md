@@ -29,8 +29,7 @@
 * 当前emacs自带的package也非常强大，比如，org-mode非常适合写作和管理TODO-LIST。
 * 自动加载配置文件依赖的包文件。
     * 个别还未纳入package archives管理的包，放在manual-install目录下管理（包括自动识别文件编码的unicad)
-
-
+* 可以不依赖于系统提供的外部输入法，使用chinese-pyim包，无缝的在中英文输入之间切换（其实还是有点缝...)
 # 使用方法简介
 ## emacs安装：
 当然需要先安装emacs，mac系统个人推荐 http://emacsformacosx.com/。
