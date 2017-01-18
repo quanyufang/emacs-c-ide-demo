@@ -1,11 +1,8 @@
 ## 这套配置文件的目标
-1. 满足C/C++、PHP、Python、JAVA以及Common Lisp（ELisp）开发人员的一般需求
-
-1.1 JAVA支持采用eclim+eclipse
-
-2. 支持多个系统图形界面和命令行界面
-
-2.1 目前支持OS X图形界面，OS X终端，CentOS 终端， Ubuntu 终端
+* 满足C/C++、PHP、Python、JAVA以及Common Lisp（ELisp）开发人员的一般需求
+    * JAVA支持采用eclim+eclipse
+* 支持多个系统图形界面和命令行界面
+    * 目前支持OS X图形界面，OS X终端，CentOS 终端， Ubuntu 终端
 
 ## 感谢
 感谢原作者[tuhdo](https://github.com/tuhdo "")，这份配置以tuhdo的配置为基础不断修改。
