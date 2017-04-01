@@ -337,6 +337,12 @@ C-Spaceset-mark Ibid. </p>
 
 <h1 id="projectileaidsec-14namesec-14a">projectile<a id="sec-14" name="sec-14"></a></h1>
 
+<p>C-c p f 当前projectile项目中查找一个文件，这个命令需要对当前项目的文件构建索引，通常如果当前文件所在目录在版本管理（如git subversion），那么projectile会选择这个项目的根目录进行索引，要注意避免在一个大目录执行这个操作，会很耗时，遇到这种情况可以C-g 退出</p>
+
+<p>C-c p s g 当前projectile项目中搜索</p>
+
+<p>C-c p i 清除当前projectile项目文件cache</p>
+
 <h1 id="分类不明确aidsec-15namesec-15a">分类不明确<a id="sec-15" name="sec-15"></a></h1>
 
 <p>M-; 执行comment-dwim&#8211;2 </p>
