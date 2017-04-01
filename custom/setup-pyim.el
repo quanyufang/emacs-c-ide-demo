@@ -23,7 +23,7 @@
 ;; (setq pyim-page-tooltip 'popup)
 
 ;; 选词框显示5个候选词
-(setq pyim-page-length 10)
+(setq pyim-page-length 9)
 
 ;; 让 Emacs 启动时自动加载 pyim 词库
 (add-hook 'emacs-startup-hook
@@ -39,3 +39,5 @@
 (provide 'setup-pyim)
 (setq pyim-page-tooltip 'pos-tip)
 (setq x-gtk-use-system-tooltips t)
+;;(set-face-attribute 'popup-tip-face nil :height 600)
+;;(setq pyim-use-tooltip nil)

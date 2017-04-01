@@ -317,3 +317,5 @@ Position the cursor at it's beginning, according to the current mode."
 
 (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
                               "xelatex -interaction nonstopmode %f"))
+
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))

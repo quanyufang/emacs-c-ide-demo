@@ -28,7 +28,10 @@
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "~/bin/global/bin" "~/.emacs.d/manual-install/mew-6.7/bin" "/Library/TeX/Distributions/Programs/texbin" "/Library/TeX/texbin/xelatex")))
  '(fci-rule-color "#d6d6d6")
  '(helm-tramp-verbose 10)
- '(line-number-mode nil)
+ '(line-number-mode t)
+ '(package-selected-packages
+   (quote
+    (zygospore ztree ws-butler workgroups2 w3m volatile-highlights vlf undo-tree smartparens slime-company shell-pop recentf-ext rainbow-mode psvn powerline php-auto-yasnippets nyan-mode markdown-mode+ jedi info+ iedit ibuffer-vc highlight-symbol highlight-numbers help-mode+ help-fns+ help+ helm-swoop helm-projectile helm-gtags grandshell-theme golden-ratio ggtags function-args flycheck-tip expand-region ecb duplicate-thing dtrt-indent discover-my-major dired+ diminish diff-hl company-jedi company-emacs-eclim company-c-headers comment-dwim-2 column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode chinese-pyim-greatdict chinese-pyim badger-theme anzu ac-emacs-eclim abyss-theme)))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
@@ -125,6 +128,7 @@
     column-enforce-mode
     ;;
     chinese-pyim
+    ;;docker
     ))
 
 (defun install-packages ()
