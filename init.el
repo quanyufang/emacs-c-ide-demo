@@ -6,7 +6,7 @@
 
 (package-initialize)
 
-(setq gc-cons-threshold 400000000)
+(setq gc-cons-threshold 800000)
 (setq inhibit-startup-message t)
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2013/bin/x86_64-darwin/"))
 (custom-set-variables
