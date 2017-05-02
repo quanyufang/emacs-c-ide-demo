@@ -19,7 +19,7 @@
  delete-old-versions t   ; delete unnecessary versions
  kept-old-versions 6     ; oldest versions to keep when a new numbered backup is made (default: 2)
  kept-new-versions 9 ; newest versions to keep when a new numbered backup is made (default: 2)
- auto-save-default t ; auto-save every buffer that visits a file
+ auto-save-default nil ; auto-save every buffer that visits a file
  auto-save-timeout 20 ; number of seconds idle time before auto-save (default: 30)
  auto-save-interval 200 ; number of keystrokes between auto-saves (default: 300)
  )
