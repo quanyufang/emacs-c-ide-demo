@@ -35,6 +35,7 @@
            (frame-parameter nil 'font)
            'han
            (font-spec :family "Hiragino Sans GB" )
+           ;;(font-spec :family "Courier New-13")
            ;; set italic font for italic face, since Emacs does not set italic
            ;; face automatically
            (set-face-attribute 'italic nil
@@ -53,7 +54,7 @@
 (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode)))
 (add-hook 'org-mode-hook (lambda () (highlight-symbol-mode)))
 
-(setq highlight-symbol-idle-delay 0.2
+(setq highlight-symbol-idle-delay 1
       highlight-symbol-on-navigation-p t)
 
 (global-set-key [(control shift mouse-1)]
@@ -67,3 +68,6 @@
 
 (require 'color-theme-sanityinc-tomorrow)
 (load-theme 'grandshell t)
+
+;; define global-font-lock-mode
+(setq font-lock-maximum-decoration 4)
