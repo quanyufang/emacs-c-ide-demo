@@ -18,6 +18,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#4d4d4c" "#c82829" "#718c00" "#eab700" "#4271ae" "#8959a8" "#3e999f" "#ffffff"))
+ '(column-enforce-column 240)
  '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
@@ -301,3 +302,4 @@
                          (t
                           "[no file]")))))
 (setq redisplay-dont-pause nil)
+(server-start)
