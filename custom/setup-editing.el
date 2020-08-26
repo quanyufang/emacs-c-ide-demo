@@ -63,8 +63,8 @@
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
-(require 'undo-tree)
-(global-undo-tree-mode)
+;;(require 'undo-tree)
+;;(global-undo-tree-mode)
 
 ;; Package: yasnippet
 ;; GROUP: Editing -> Yasnippet

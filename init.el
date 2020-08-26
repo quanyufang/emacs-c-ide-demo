@@ -1,9 +1,5 @@
 (require 'package)
-(set 'package-archives '())
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
-                                        ;("melpa" . "https://melpa.org/packages/")
-
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 
 (setq gc-cons-threshold 800000)
@@ -18,28 +14,27 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#4d4d4c" "#c82829" "#718c00" "#eab700" "#4271ae" "#8959a8" "#3e999f" "#ffffff"))
- '(column-enforce-column 240)
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
+ '(beacon-color "#f2777a")
+ '(column-enforce-column 240 t)
+ '(custom-enabled-themes '(grandshell))
  '(custom-safe-themes
-   (quote
-    ("f9574c9ede3f64d57b3aa9b9cef621d54e2e503f4d75d8613cbcc4ca1c962c21" "b9293d120377ede424a1af1e564ba69aafa85e0e9fd19cf89b4e15f8ee42a8bb" "8d1e447fea4fc82aac533ca87be3f120daffc2905229c01f07ba18ad1edcc376" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default)))
+   '("3860a842e0bf585df9e5785e06d600a86e8b605e5cc0b74320dfe667bcbe816c" "f9574c9ede3f64d57b3aa9b9cef621d54e2e503f4d75d8613cbcc4ca1c962c21" "b9293d120377ede424a1af1e564ba69aafa85e0e9fd19cf89b4e15f8ee42a8bb" "8d1e447fea4fc82aac533ca87be3f120daffc2905229c01f07ba18ad1edcc376" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "f0d8af755039aa25cd0792ace9002ba885fd14ac8e8807388ab00ec84c9497d7" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default))
  '(ecb-options-version "2.50")
  '(exec-path
-   (quote
-    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "~/bin/global/bin" "~/.emacs.d/manual-install/mew-6.7/bin" "/Library/TeX/Distributions/Programs/texbin" "/Library/TeX/texbin/xelatex")))
+   '("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "~/bin/global/bin" "~/.emacs.d/manual-install/mew-6.7/bin" "/Library/TeX/Distributions/Programs/texbin" "/Library/TeX/texbin/xelatex"))
  '(fci-rule-color "#d6d6d6")
+ '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
+ '(frame-background-mode 'dark)
  '(helm-tramp-verbose 10)
  '(line-number-mode t)
  '(package-selected-packages
-   (quote
-    (zygospore ztree ws-butler workgroups2 w3m volatile-highlights vlf undo-tree smartparens slime-company shell-pop recentf-ext rainbow-mode psvn powerline php-auto-yasnippets nyan-mode markdown-mode+ jedi info+ iedit ibuffer-vc highlight-symbol highlight-numbers help-mode+ help-fns+ help+ helm-swoop helm-projectile helm-gtags grandshell-theme golden-ratio ggtags function-args flycheck-tip expand-region ecb duplicate-thing dtrt-indent discover-my-major dired+ diminish diff-hl company-jedi company-emacs-eclim company-c-headers comment-dwim-2 column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode badger-theme anzu ac-emacs-eclim abyss-theme)))
- '(send-mail-function (quote smtpmail-send-it))
+   '(undo-tree zygospore ztree ws-butler workgroups2 w3m volatile-highlights vlf smartparens slime-company shell-pop recentf-ext php-auto-yasnippets nyan-mode markdown-mode+ jedi iedit ibuffer-vc highlight-symbol highlight-numbers helm-swoop helm-gtags grandshell-theme golden-ratio ggtags function-args flycheck-tip expand-region ecb duplicate-thing dtrt-indent discover-my-major diff-hl company-jedi company-emacs-eclim company-c-headers comment-dwim-2 column-enforce-mode color-theme-sanityinc-tomorrow clean-aindent-mode anzu))
+ '(send-mail-function 'smtpmail-send-it)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#c82829")
+   '((20 . "#c82829")
      (40 . "#f5871f")
      (60 . "#eab700")
      (80 . "#718c00")
@@ -56,8 +51,9 @@
      (300 . "#c82829")
      (320 . "#f5871f")
      (340 . "#eab700")
-     (360 . "#718c00"))))
- '(vc-annotate-very-old-color nil))
+     (360 . "#718c00")))
+ '(vc-annotate-very-old-color nil)
+ '(window-divider-mode nil))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (defconst packages-need
@@ -67,7 +63,6 @@
     ggtags
     helm
     helm-gtags
-    helm-projectile
     helm-swoop
     function-args
     clean-aindent-mode
@@ -77,14 +72,13 @@
     iedit
     yasnippet
     smartparens
-    projectile
     volatile-highlights
     undo-tree
     zygospore
     workgroups2
     expand-region
     ibuffer-vc
-    dired+
+    ;;dired+
     recentf-ext
     ztree
     vlf
@@ -97,10 +91,10 @@
     golden-ratio
     highlight-numbers
     discover-my-major
-    ;;rainbow-mode
-    help+
-    help-fns+
-    help-mode+
+    rainbow-mode
+    ;;help+
+    ;;help-fns+
+    ;;help-mode+
     ;;c/c++
     ecb
     ;;commonq lisp
@@ -110,9 +104,9 @@
     highlight-symbol
     color-theme-sanityinc-tomorrow
     grandshell-theme
-    info+
+    ;;info+
     company-c-headers
-    psvn
+    ;;psvn
     ;; php
     php-mode
     php-auto-yasnippets
@@ -128,8 +122,8 @@
     ;;ac-emacs-eclim
     column-enforce-mode
     ;;pyim
-    pyim
-    pyim-basedict
+    ;;pyim
+    ;;pyim-basedict
     ;;docker
     ))
 
@@ -187,7 +181,7 @@
 ;; (require 'setup-ggtags)
 ;; (require 'setup-cedet)
 (require 'setup-editing)
-(require 'setup-pyim)
+;;(require 'setup-pyim)
 
 ;; make sure that directory snippets needed exists
 (insure-dir "~/.emacs.d/snippets")

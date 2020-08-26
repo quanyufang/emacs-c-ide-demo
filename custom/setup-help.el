@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GROUP: Help -> Info+               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'info+)
+;;(require 'info+)
 
 ;; A quick major mode help with discover-my-major
 (global-unset-key (kbd "C-h h"))        ; original "C-h h" displays "hello world" in different languages
@@ -21,7 +21,7 @@
 ;;                                    ;;
 ;; GROUP: Help                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'help+)
+;;(require 'help+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -29,7 +29,7 @@
 ;;                                    ;;
 ;; GROUP: Help                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'help-fns+)
+;;(require 'help-fns+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -37,4 +37,4 @@
 ;;                                    ;;
 ;; GROUP: Help                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'help-mode+)
+;;(require 'help-mode+)

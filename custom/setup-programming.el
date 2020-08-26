@@ -116,7 +116,7 @@
 (add-hook 'prog-mode-hook 'ws-butler-mode)
 
 ;; psvn
-(require 'psvn)
+;;(require 'psvn)
 
 
 (add-hook 'prog-mode-hook 'helm-gtags-mode)
