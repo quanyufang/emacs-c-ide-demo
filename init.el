@@ -295,5 +295,5 @@
                           (concat "{" dired-directory "}"))
                          (t
                           "[no file]")))))
-(setq redisplay-dont-pause nil)
+;;(setq redisplay-dont-pause nil)
 (server-start)
